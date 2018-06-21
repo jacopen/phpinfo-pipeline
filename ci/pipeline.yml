@@ -25,4 +25,5 @@ jobs:
       - put: cf
         params:
           manifest: phpinfo/manifest.yml
+          path: phpinfo/
 
