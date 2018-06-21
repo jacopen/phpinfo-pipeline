@@ -21,6 +21,7 @@ jobs:
     serial: true
     plan:
       - get: phpinfo
+        trigger: true
       - put: cf
         params:
           manifest: phpinfo/manifest.yml
