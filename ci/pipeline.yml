@@ -1,0 +1,27 @@
+---
+resources:
+  - name: phpinfo
+    type: git
+    source:
+      uri: {{github-uri}}
+      branch: {{github-branch}}
+
+  - name: cf
+    type: cf
+    source:
+      api: {{cf-api}}
+      username: {{cf-username}}
+      password: {{cf-password}}
+      organization: {{cf-org}}
+      space: {{cf-space}}
+      skip_cert_check: true
+
+jobs:
+  - name: download-and-push
+    serial: true
+    plan:
+      - get: phpinfo
+      - put: cf
+        params:
+          manifest: phpinfo/manifest.yml
+

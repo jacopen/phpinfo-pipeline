@@ -1,0 +1,8 @@
+github-uri: https://github.com/jacopen/phpinfo-pipeline.git
+github-branch: master
+cf-api: api.sys.example.com
+cf-username: user
+cf-password: pass
+cf-org: org
+cf-space: space
+
